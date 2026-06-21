@@ -48,7 +48,7 @@ const marqueeItems = [
   "Ryba Smażona",
 ];
 
-type ModalKey = "menu" | "kontakt" | "rezerwacja" | "galeria" | null;
+type ModalKey = "menu" | "kontakt" | "rezerwacja" | null;
 
 function Modal({
   open,
