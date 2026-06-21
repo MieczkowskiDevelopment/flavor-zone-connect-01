@@ -253,10 +253,9 @@ function Index() {
 
       {/* Quick actions strip */}
       <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-3 gap-4">
           {[
             { key: "menu" as const, label: "Zobacz menu", sub: "Pełna karta dań" },
-            { key: "galeria" as const, label: "Galeria", sub: "Wnętrze i potrawy" },
             { key: "rezerwacja" as const, label: "Rezerwacja", sub: "Zarezerwuj stolik" },
             { key: "kontakt" as const, label: "Kontakt", sub: "Telefon, adres" },
           ].map((c) => (
