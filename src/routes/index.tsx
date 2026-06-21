@@ -206,13 +206,10 @@ function Index() {
                 <button
                   type="button"
                   onClick={() => open("menu")}
-                  className="group relative overflow-hidden px-8 py-4 bg-accent text-accent-foreground font-display uppercase tracking-widest text-sm rounded-md transition-all duration-300 hover:shadow-[0_16px_40px_-12px] hover:shadow-accent/60 hover:-translate-y-0.5 active:translate-y-0"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-accent-foreground font-display uppercase tracking-widest text-sm rounded-md transition-all duration-300 hover:brightness-110 hover:shadow-[0_16px_40px_-12px] hover:shadow-accent/60 hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  <span className="relative z-10">Zobacz Menu</span>
-                  <span className="absolute inset-0 bg-foreground translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                  <span className="absolute inset-0 z-10 flex items-center justify-center font-display uppercase tracking-widest text-sm text-background translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    Zobacz Menu →
-                  </span>
+                  Zobacz Menu
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </button>
                 <button
                   type="button"
