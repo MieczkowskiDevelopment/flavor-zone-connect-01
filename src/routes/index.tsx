@@ -451,35 +451,6 @@ function Index() {
         <ReservationForm onDone={close} />
       </Modal>
 
-      <Modal open={modal === "galeria"} onClose={close} title="Galeria" eyebrow="Wnętrze · Kuchnia · Atmosfera">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-2">
-          {Array.from({ length: 9 }).map((_, i) => (
-            <div
-              key={i}
-              className="group relative aspect-square overflow-hidden rounded-xl ring-1 ring-foreground/10 animate-fade-up"
-              style={{ animationDelay: `${i * 50}ms` }}
-            >
-              <img
-                src={heroRosol}
-                alt={`Strefa Smaku — zdjęcie ${i + 1}`}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  filter: `hue-rotate(${i * 18}deg) saturate(${0.8 + (i % 3) * 0.2})`,
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-3">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-foreground">
-                  Foto {String(i + 1).padStart(2, "0")}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 text-xs font-mono uppercase tracking-widest text-muted-foreground">
-          Pełna galeria dostępna na naszym Facebooku.
-        </p>
-      </Modal>
     </div>
   );
 }
