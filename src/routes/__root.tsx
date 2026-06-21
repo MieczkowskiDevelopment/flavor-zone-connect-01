@@ -80,10 +80,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Strefa Smaku Olecko — Domowe obiady, kuchnia polska" },
       { name: "description", content: "Tradycyjna polska kuchnia w sercu Olecka. Domowe obiady od 20 zł, na miejscu, na wynos i z dostawą." },
       { name: "author", content: "Strefa Smaku" },
-      { property: "og:title", content: "Strefa Smaku Olecko" },
-      { property: "og:description", content: "Tradycyjna polska kuchnia w sercu Olecka." },
+      { property: "og:title", content: "Strefa Smaku Olecko — Domowe obiady, kuchnia polska" },
+      { property: "og:description", content: "Tradycyjna polska kuchnia w sercu Olecka. Domowe obiady od 20 zł, na miejscu, na wynos i z dostawą." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Strefa Smaku Olecko — Domowe obiady, kuchnia polska" },
+      { name: "twitter:description", content: "Tradycyjna polska kuchnia w sercu Olecka. Domowe obiady od 20 zł, na miejscu, na wynos i z dostawą." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/04506693-9347-464e-896f-f610752f978f/id-preview-fe5daac4--1dd18619-4e87-48b2-a6fd-270b50980505.lovable.app-1782074738005.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/04506693-9347-464e-896f-f610752f978f/id-preview-fe5daac4--1dd18619-4e87-48b2-a6fd-270b50980505.lovable.app-1782074738005.png" },
     ],
     links: [
       {
