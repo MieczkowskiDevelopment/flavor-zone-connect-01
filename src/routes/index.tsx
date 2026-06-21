@@ -164,7 +164,6 @@ function Index() {
           </button>
           <div className="hidden md:flex gap-8">
             <button type="button" onClick={() => open("menu")} className={navButtonCls}>Menu</button>
-            <button type="button" onClick={() => open("galeria")} className={navButtonCls}>Galeria</button>
             <button type="button" onClick={() => open("rezerwacja")} className={navButtonCls}>Rezerwacja</button>
             <button type="button" onClick={() => open("kontakt")} className={navButtonCls}>Kontakt</button>
           </div>
