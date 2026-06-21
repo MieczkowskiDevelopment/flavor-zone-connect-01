@@ -48,7 +48,7 @@ const marqueeItems = [
   "Ryba Smażona",
 ];
 
-type ModalKey = "menu" | "kontakt" | "rezerwacja" | "galeria" | null;
+type ModalKey = "menu" | "kontakt" | "rezerwacja" | null;
 
 function Modal({
   open,
@@ -164,7 +164,6 @@ function Index() {
           </button>
           <div className="hidden md:flex gap-8">
             <button type="button" onClick={() => open("menu")} className={navButtonCls}>Menu</button>
-            <button type="button" onClick={() => open("galeria")} className={navButtonCls}>Galeria</button>
             <button type="button" onClick={() => open("rezerwacja")} className={navButtonCls}>Rezerwacja</button>
             <button type="button" onClick={() => open("kontakt")} className={navButtonCls}>Kontakt</button>
           </div>
@@ -207,13 +206,10 @@ function Index() {
                 <button
                   type="button"
                   onClick={() => open("menu")}
-                  className="group relative overflow-hidden px-8 py-4 bg-accent text-accent-foreground font-display uppercase tracking-widest text-sm rounded-md transition-all duration-300 hover:shadow-[0_16px_40px_-12px] hover:shadow-accent/60 hover:-translate-y-0.5 active:translate-y-0"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-accent-foreground font-display uppercase tracking-widest text-sm rounded-md transition-all duration-300 hover:brightness-110 hover:shadow-[0_16px_40px_-12px] hover:shadow-accent/60 hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  <span className="relative z-10">Zobacz Menu</span>
-                  <span className="absolute inset-0 bg-foreground translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                  <span className="absolute inset-0 z-10 flex items-center justify-center font-display uppercase tracking-widest text-sm text-background translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    Zobacz Menu →
-                  </span>
+                  Zobacz Menu
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </button>
                 <button
                   type="button"
@@ -225,29 +221,15 @@ function Index() {
               </div>
             </div>
             <div className="w-full md:w-2/5 animate-fade-up [animation-delay:200ms]">
-              <button
-                type="button"
-                onClick={() => open("galeria")}
-                className="group block w-full text-left"
-                aria-label="Otwórz galerię"
-              >
-                <div className="relative overflow-hidden rounded-2xl ring-1 ring-foreground/5 shadow-2xl">
-                  <img
-                    src={heroRosol}
-                    alt="Tradycyjny polski rosół z makaronem podawany w Strefie Smaku w Olecku"
-                    width={800}
-                    height={1000}
-                    className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-foreground">
-                      Zobacz galerię
-                    </span>
-                    <span className="size-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center">→</span>
-                  </div>
-                </div>
-              </button>
+              <div className="relative overflow-hidden rounded-2xl ring-1 ring-foreground/5 shadow-2xl group">
+                <img
+                  src={heroRosol}
+                  alt="Tradycyjny polski rosół z makaronem podawany w Strefie Smaku w Olecku"
+                  width={800}
+                  height={1000}
+                  className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -271,10 +253,9 @@ function Index() {
 
       {/* Quick actions strip */}
       <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-3 gap-4">
           {[
             { key: "menu" as const, label: "Zobacz menu", sub: "Pełna karta dań" },
-            { key: "galeria" as const, label: "Galeria", sub: "Wnętrze i potrawy" },
             { key: "rezerwacja" as const, label: "Rezerwacja", sub: "Zarezerwuj stolik" },
             { key: "kontakt" as const, label: "Kontakt", sub: "Telefon, adres" },
           ].map((c) => (
@@ -470,35 +451,6 @@ function Index() {
         <ReservationForm onDone={close} />
       </Modal>
 
-      <Modal open={modal === "galeria"} onClose={close} title="Galeria" eyebrow="Wnętrze · Kuchnia · Atmosfera">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-2">
-          {Array.from({ length: 9 }).map((_, i) => (
-            <div
-              key={i}
-              className="group relative aspect-square overflow-hidden rounded-xl ring-1 ring-foreground/10 animate-fade-up"
-              style={{ animationDelay: `${i * 50}ms` }}
-            >
-              <img
-                src={heroRosol}
-                alt={`Strefa Smaku — zdjęcie ${i + 1}`}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  filter: `hue-rotate(${i * 18}deg) saturate(${0.8 + (i % 3) * 0.2})`,
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-3">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-foreground">
-                  Foto {String(i + 1).padStart(2, "0")}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 text-xs font-mono uppercase tracking-widest text-muted-foreground">
-          Pełna galeria dostępna na naszym Facebooku.
-        </p>
-      </Modal>
     </div>
   );
 }
