@@ -221,29 +221,15 @@ function Index() {
               </div>
             </div>
             <div className="w-full md:w-2/5 animate-fade-up [animation-delay:200ms]">
-              <button
-                type="button"
-                onClick={() => open("galeria")}
-                className="group block w-full text-left"
-                aria-label="Otwórz galerię"
-              >
-                <div className="relative overflow-hidden rounded-2xl ring-1 ring-foreground/5 shadow-2xl">
-                  <img
-                    src={heroRosol}
-                    alt="Tradycyjny polski rosół z makaronem podawany w Strefie Smaku w Olecku"
-                    width={800}
-                    height={1000}
-                    className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-foreground">
-                      Zobacz galerię
-                    </span>
-                    <span className="size-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center">→</span>
-                  </div>
-                </div>
-              </button>
+              <div className="relative overflow-hidden rounded-2xl ring-1 ring-foreground/5 shadow-2xl group">
+                <img
+                  src={heroRosol}
+                  alt="Tradycyjny polski rosół z makaronem podawany w Strefie Smaku w Olecku"
+                  width={800}
+                  height={1000}
+                  className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
             </div>
           </div>
         </div>
